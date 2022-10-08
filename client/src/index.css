@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Alice&family=Cormorant+SC:wght@300&family=Iceberg&family=JetBrains+Mono:wght@500&family=Nunito:wght@200&family=Overpass:wght@300&family=Prompt:wght@100&family=Roboto:ital,wght@1,900&family=ZCOOL+XiaoWei&display=swap');
+*{
+    font-family: 'JetBrains Mono', monospace;
+    color: #3ECDE0;
+}
+.bg{
+  background: #3ECDE0;
+}
+.jitang{
+    color: #205e67b9;
+}
+input{
+    outline: none;
+}
+.button {
+    margin: 0;
+    background: transparent;
+    padding: 0;
+    border: none;
+  }
+  
+  /* button styling */
+  .button {
+    --border-right: 6px;
+    --text-stroke-color: rgba(255,255,255,0.6);
+    --animation-color:#3ECDE0 ;
+
+    letter-spacing: 3px;
+    text-decoration: none;
+    font-size: var(--fs-size);
+    font-family: "Arial";
+    position: relative;
+    text-transform: uppercase;
+    color: transparent;
+
+  }
+  /* this is the text, when you hover on button */
+  .hover-text {
+    position: absolute;
+    box-sizing: border-box;
+    content: attr(data-text);
+    color: var(--animation-color);
+    width: 0%;
+    inset: 0;
+    border-right: var(--border-right) solid var(--animation-color);
+    overflow: hidden;
+    transition: 0.5s;
+    -webkit-text-stroke: 1px var(--animation-color);
+  }
+  /* hover */
+  .button:hover .hover-text {
+    width: 100%;
+    filter: drop-shadow(0 0 23px var(--animation-color))
+  }
