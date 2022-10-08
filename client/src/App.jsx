@@ -60,7 +60,7 @@ function App() {
       } else if (data.current.condition.text.includes("Overcast")) {
         seticon("WIND");
         colorit("lightblue");
-      } else if (data.current.condition.text.includes("clear")) {
+      } else if (data.current.condition.text.includes("Clear")) {
         seticon("CLEAR_NIGHT");
         colorit("lightblue");
       } else if (data.current.condition.text.includes("Sunny")) {
