@@ -107,6 +107,7 @@ function App() {
   }, []);
 useEffect(()=>{
   getTime()
+  console.log(timemon)
 },[time])
 
   const defaults = {
@@ -127,7 +128,7 @@ useEffect(()=>{
         <div className="bg-neutral-800 h-screen w-[50vw] flex items-center justify-center ">
           <div>
             <div>{moment(time).format("hh:mm")}</div>
-            <div className="text-5xl">{`Good ${timemon} =)`}</div>
+            <div className="text-5xl">{`Weather App`}</div>
             <div className="jitang mt-2">
               Here's you weather telecast for today.
             </div>
