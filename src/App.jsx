@@ -120,12 +120,7 @@ function App() {
             <div className="jitang mt-2">
               Here's you weather telecast for today.
             </div>
-            <ReactAnimatedWeather
-              icon={defaults.icon}
-              color={defaults.color}
-              size={defaults.size}
-              animate={defaults.animate}
-            />
+           
             <div className="text-sm">
               feels like {data.current.feelslike_c}°C
             </div>
