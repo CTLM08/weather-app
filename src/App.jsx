@@ -20,7 +20,7 @@ function App() {
     `https://api.weatherapi.com/v1/forecast.json?key=0cb021f26c2e44d4be562400220110&q=London&days=4&aqi=yes&alerts=yes`
   );
   const [link3, setlink3] = useState(
-    `https://api.weatherapi.com/v1/search.json?key=0cb021f26c2e44d4be562400220110&q=Lodon`
+    `https://api.weatherapi.com/v1/search.json?key=0cb021f26c2e44d4be562400220110&q=${name}`
   );
   useEffect(() => {
     axios(link).then((e) => {
@@ -33,11 +33,6 @@ function App() {
     });
   }, [link2]);
   useEffect(() => {
-    if (name == "") {
-      setlink3(
-        `https://api.weatherapi.com/v1/search.json?key=0cb021f26c2e44d4be562400220110&q=London`
-      );
-    }
     axios(link3).then((e) => {
       lets(e.data);
       if (seacrh != undefined) {
