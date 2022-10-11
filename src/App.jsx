@@ -3,7 +3,6 @@ import axios from "axios";
 import moment from "moment";
 import { Icon } from "@iconify/react";
 import ReactAnimatedWeather from "./weather-animate/ReactAnimatedWeather"
-import { get } from "express/lib/response";
 function App() {
   const [time, setTime] = useState(Date.now());
   const [timemon, settime] = useState("");
@@ -102,13 +101,8 @@ function App() {
     return () => {
       clearInterval(interval);
       getTime();
-      console.log(timemon)
     };
   }, []);
-useEffect(()=>{
-  getTime()
-  console.log(timemon)
-},[time])
 
   const defaults = {
     icon: `${icon}`,
