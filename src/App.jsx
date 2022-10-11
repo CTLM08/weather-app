@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import moment from "moment";
-import ReactAnimatedWeather from "./weather-animate/ReactAnimatedWeather"
 import { Icon } from "@iconify/react";
 function App() {
   const [time, setTime] = useState(Date.now());
