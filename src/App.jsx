@@ -151,9 +151,14 @@ function App() {
           </div>
         </div>
         <div className="bg-neutral-800 h-screen w-[50vw]  flex items-center justify-center flex-col ">
+          <div className="flex flex-row items-center h-8 w-auto bg-white justify-center rounded-md">
+            <button className="flex items-center flex-row ">
+            <div className="flex items-center justify-center h-8 w-8  ">
+            <Icon icon="carbon:search" className="w-5 h-5  text-gray-400 "/>
+            </div>
           <div>
             <input
-              className="text-center w-80 mt-2 z-[99]"
+              className="p-3 w-80 h-8   bg-gray-50 rounded-md"
               value={name}
               onChange={(e) => {
                 setname(e.target.value);
@@ -162,6 +167,8 @@ function App() {
                 );
               }}
             />
+          </div>
+            </button>
           </div>
           <div>
             <div className="relative w-full flex justify-center">
