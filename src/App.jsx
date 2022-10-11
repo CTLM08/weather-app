@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import moment from "moment";
 import { Icon } from "@iconify/react";
+import ReactAnimatedWeather from "./weather-animate/ReactAnimatedWeather"
 function App() {
   const [time, setTime] = useState(Date.now());
   const [timemon, settime] = useState("");
@@ -18,6 +19,9 @@ function App() {
   const [link2, setlink2] = useState(
     `http://api.weatherapi.com/v1/forecast.json?key=0cb021f26c2e44d4be562400220110&q=London&days=4&aqi=no&alerts=no`
   );
+  const [link3, setlink3] = useState(
+    `http://api.weatherapi.com/v1/search.json?key=0cb021f26c2e44d4be562400220110 &q=Lodon`
+  );
   useEffect(() => {
     axios(link).then((e) => {
       setdata(e.data);
@@ -29,9 +33,12 @@ function App() {
     });
   }, [link2]);
   useEffect(() => {
-    axios(
-      `http://api.weatherapi.com/v1/search.json?key=0cb021f26c2e44d4be562400220110 &q=${name}`
-    ).then((e) => {
+    if (name == "") {
+      setlink3(
+        `http://api.weatherapi.com/v1/search.json?key=0cb021f26c2e44d4be562400220110 &q=London`
+      );
+    }
+    axios(link3).then((e) => {
       lets(e.data);
       if (seacrh != undefined) {
         bruh(seacrh);
@@ -119,7 +126,12 @@ function App() {
             <div className="jitang mt-2">
               Here's you weather telecast for today.
             </div>
-           
+            <ReactAnimatedWeather
+              icon={defaults.icon}
+              color={defaults.color}
+              size={defaults.size}
+              animate={defaults.animate}
+            />
             <div className="text-sm">
               feels like {data.current.feelslike_c}°C
             </div>
@@ -143,19 +155,30 @@ function App() {
             <input
               className="text-center w-80 mt-2 z-[99]"
               value={name}
-              onChange={(e) => setname(e.target.value)}
+              onChange={(e) => {
+                setname(e.target.value);
+                setlink3(
+                  `http://api.weatherapi.com/v1/search.json?key=0cb021f26c2e44d4be562400220110 &q=${e.target.value}`
+                );
+              }}
             />
           </div>
           <div>
             <div className="relative w-full flex justify-center">
-              <div className={`fixed w-80 p-3 ${name != "" ? `border-2 border-blue-300 bg-neutral-900 overflow-y-scroll`  : ""} mt-2  `}>
+              <div
+                className={`fixed w-80 p-3 ${
+                  name != ""
+                    ? `border-2 border-blue-300 bg-neutral-900 overflow-y-scroll`
+                    : ""
+                } mt-2  `}
+              >
                 <>
                   {name != "" && list == ""
                     ? `no result`
                     : name != ""
                     ? list.map((e, i) => (
                         <div
-                        className={i > 0 && "mt-2"}
+                          className={i > 0 && "mt-2"}
                           onClick={() => {
                             setlink(
                               `https://api.weatherapi.com/v1/current.json?key=0cb021f26c2e44d4be562400220110&q=${e.name}&aqi=yes`
