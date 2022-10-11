@@ -17,7 +17,7 @@ function App() {
     `https://api.weatherapi.com/v1/current.json?key=0cb021f26c2e44d4be562400220110&q=London&aqi=yes`
   );
   const [link2, setlink2] = useState(
-    `http://api.weatherapi.com/v1/forecast.json?key=0cb021f26c2e44d4be562400220110&q=London&days=4&aqi=no&alerts=no`
+    `http://api.weatherapi.com/v1/forecast.json?key=0cb021f26c2e44d4be562400220110&q=London&days=4&aqi=yes&alerts=yes`
   );
   const [link3, setlink3] = useState(
     `http://api.weatherapi.com/v1/search.json?key=0cb021f26c2e44d4be562400220110&q=Lodon`
@@ -184,7 +184,7 @@ function App() {
                               `https://api.weatherapi.com/v1/current.json?key=0cb021f26c2e44d4be562400220110&q=${e.name}&aqi=yes`
                             );
                             setlink2(
-                              `http://api.weatherapi.com/v1/forecast.json?key=0cb021f26c2e44d4be562400220110&q=${e.name}&days=4&aqi=no&alerts=no`
+                              `http://api.weatherapi.com/v1/forecast.json?key=0cb021f26c2e44d4be562400220110&q=${e.name}&days=4&aqi=yes&alerts=yes`
                             );
                             setname("");
                             bruh(seacrh);
