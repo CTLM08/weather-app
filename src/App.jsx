@@ -39,7 +39,7 @@ function App() {
         bruh(seacrh);
       }
     });
-  }, [name]);
+  }, [link3]);
 
   const getTime = () => {
     const currenTime = new Date();
