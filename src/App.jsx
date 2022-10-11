@@ -101,8 +101,10 @@ function App() {
     return () => {
       clearInterval(interval);
       getTime();
+      console.log(timemon)
     };
   }, []);
+
 
   const defaults = {
     icon: `${icon}`,
