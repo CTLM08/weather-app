@@ -22,6 +22,7 @@ function App() {
   const [link3, setlink3] = useState(
     `https://api.weatherapi.com/v1/search.json?key=0cb021f26c2e44d4be562400220110&q=${name}`
   );
+  const [err,debug]=useState([])
   useEffect(() => {
     axios(link).then((e) => {
       setdata(e.data);
@@ -35,11 +36,14 @@ function App() {
   useEffect(() => {
     axios(link3).then((e) => {
       lets(e.data);
-      if (seacrh != undefined) {
-        bruh(seacrh);
-      }
+      
     });
-  }, [link3]);
+  }, [link3,name]);
+  useEffect(()=>{
+    if (seacrh != undefined) {
+      bruh(seacrh);
+    }
+  },[seacrh])
 
   const getTime = () => {
     const currenTime = new Date();
@@ -168,7 +172,7 @@ function App() {
           <div>
             <div className="relative w-full flex justify-center">
               <div
-                className={`fixed w-80 p-3 ${
+                className={`fixed list p-3 ${
                   name != ""
                     ? `border-2 border-blue-300 bg-neutral-900 overflow-y-scroll`
                     : ""
