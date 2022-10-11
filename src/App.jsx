@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import moment from "moment";
-import ReactAnimatedWeather from "react-animated-weather";
+import ReactAnimatedWeather from "./weather-animate/ReactAnimatedWeather"
 import { Icon } from "@iconify/react";
 function App() {
   const [time, setTime] = useState(Date.now());
@@ -109,7 +109,7 @@ function App() {
     data &&
     datee && (
       <div
-        className="bg-neutral-800 relative h-screen w-full flex flex-row items-center justify-center gap-2"
+        className="bg-neutral-800 relative h-screen w-full flex flex-row items-center justify-center gap-2 "
         style={{ backgroundImage: `` }}
       >
         <div className="absolute bottom-0">made by liming from MRGA</div>

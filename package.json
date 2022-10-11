@@ -16,6 +16,7 @@
     "react-animated-weather": "^4.0.1",
     "react-dom": "^18.2.0",
     "react-smooth-scrollbar": "^8.0.6",
+    "serve": "^14.0.1",
     "smooth-scrollbar": "^8.8.1"
   },
   "devDependencies": {
