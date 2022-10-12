@@ -149,7 +149,7 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="bg-neutral-800 mt-5 md:mt-0 md:h-screen w-[50vw]  flex items-center justify-center flex-col ">
+        <div className="bg-neutral-800 h-[60vh] md:mt-0 md:h-screen w-[50vw]  flex items-center justify-center flex-col ">
           <div className="flex flex-row items-center h-8 w-auto bg-white justify-center rounded-md">
             <button className="flex items-center flex-row ">
             <div className="flex items-center justify-center h-6 w-6 md:h-8 md:w-8  ">
