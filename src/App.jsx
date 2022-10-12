@@ -114,15 +114,15 @@ function App() {
     data &&
     datee && (
       <div
-        className="bg-neutral-800 relative h-screen w-full flex flex-row items-center justify-center gap-2 "
+        className="bg-neutral-800 relative h-vw md:h-screen w-full flex flex-col  md:flex-row items-center justify-center gap-2 "
         style={{ backgroundImage: `` }}
       >
-        <div className="absolute bottom-0">made by liming from MRGA</div>
-        <div className="bg-neutral-800 h-screen w-[50vw] flex items-center justify-center ">
+        <div className="absolute bottom-0 text-xs md:text-base">made by liming from MRGA</div>
+        <div className="bg-neutral-800 md:h-screen w-[50vw] flex items-center justify-center mt-5 md:mt-0">
           <div>
-            <div>{moment(time).format("hh:mm")}</div>
-            <div className="text-5xl">{`Weather App`}</div>
-            <div className="jitang mt-2">
+            <div className="text-xs md:text-base">{moment(time).format("hh:mm")}</div>
+            <div className=" text-3xl md:text-5xl">{`Weather App`}</div>
+            <div className="jitang mt-2 text-xs md:text-base ">
               Here's you weather telecast for today.
             </div>
             <ReactAnimatedWeather
@@ -131,33 +131,33 @@ function App() {
               size={defaults.size}
               animate={defaults.animate}
             />
-            <div className="text-sm">
+            <div className="text-xs md:text-sm">
               feels like {data.current.feelslike_c}°C
             </div>
 
-            <div className="text-2xl mt-2 flex items-center">
+            <div className="text-xl md:text-2xl mt-2 flex items-center">
               <Icon icon="gis:poi" />
               <div className="w-3"></div>
               <div>{data.location.name}</div>
             </div>
-            <div className="text-sm mt-2">{data.current.condition.text}</div>
+            <div className="text-xs md:text-sm mt-2">{data.current.condition.text}</div>
             <div className=" flex flex-row items-center mr-14">
               <div>
                 <img src={data.current.condition.icon}></img>
               </div>
-              <div className="text-2xl">{data.current.temp_c}°C</div>
+              <div className="text-xl md:text-2xl">{data.current.temp_c}°C</div>
             </div>
           </div>
         </div>
-        <div className="bg-neutral-800 h-screen w-[50vw]  flex items-center justify-center flex-col ">
+        <div className="bg-neutral-800 mt-5 md:mt-0 md:h-screen w-[50vw]  flex items-center justify-center flex-col ">
           <div className="flex flex-row items-center h-8 w-auto bg-white justify-center rounded-md">
             <button className="flex items-center flex-row ">
-            <div className="flex items-center justify-center h-8 w-8  ">
+            <div className="flex items-center justify-center h-6 w-6 md:h-8 md:w-8  ">
             <Icon icon="carbon:search" className="w-5 h-5  text-gray-400 "/>
             </div>
           <div>
             <input
-              className="p-3 w-80 h-8   bg-gray-50 rounded-md"
+              className="p-3 w-64 md:w-80 h-8   bg-gray-50 rounded-md"
               value={name}
               onChange={(e) => {
                 setname(e.target.value);
@@ -172,7 +172,7 @@ function App() {
           <div>
             <div className="relative w-full flex justify-center">
               <div
-                className={`fixed list p-3 ${
+                className={`absolute w-64 md:w-[352px] p-3 ${
                   name != ""
                     ? `border-2 border-blue-300 bg-neutral-900 overflow-y-scroll`
                     : ""
@@ -206,47 +206,47 @@ function App() {
             <div className="text-center mt-2">
               <div className="w-full bg h-1 mt-2cd  transition-all"></div>
               <div className="mt-5 w-full">
-                <div className="text-2xl">Weather Details</div>
-                <div className=" flex mt-4 felx-row justify-between">
+                <div className="text-xl md:text-2xl">Weather Details</div>
+                <div className=" flex mt-4 felx-row justify-between text-sm md:text-base">
                   <div>Cloudy</div>
                   <div>{data.current.cloud} %</div>
                 </div>
-                <div className=" flex felx-row justify-between mt-2">
+                <div className=" flex felx-row justify-between mt-2 text-sm md:text-base">
                   <div>Humidity</div>
                   <div>{data.current.humidity} %</div>
                 </div>
-                <div className=" flex felx-row justify-between mt-2">
+                <div className=" flex felx-row justify-between mt-2 text-sm md:text-base">
                   <div>Wind</div>
                   <div>W@{data.current.wind_kph}km/h</div>
                 </div>
               </div>
             </div>
             <div className="mt-8 w-full ">
-              <div className="text-2xl">Forecasts</div>
-              <div className="flex flex-row justify-between items-center">
+              <div className="text-xl md:text-2xl">Forecasts</div>
+              <div className="flex flex-row justify-between items-center text-sm md:text-base">
                 <div>{datee.forecast.forecastday[1].date}</div>
                 <div>
                   <img
                     src={datee.forecast.forecastday[1].day.condition.icon}
-                    className="h-14 w-14"
+                    className="h-10 w-10 md:h-14 md:w-14"
                   ></img>
                 </div>
               </div>
-              <div className="flex flex-row justify-between items-center">
+              <div className="flex flex-row justify-between items-center text-sm md:text-base">
                 <div>{datee.forecast.forecastday[2].date}</div>
                 <div>
                   <img
                     src={datee.forecast.forecastday[2].day.condition.icon}
-                    className="h-14 w-14"
+                    className="h-10 w-10 md:h-14 md:w-14"
                   ></img>
                 </div>
               </div>
-              <div className="flex flex-row justify-between items-center">
+              <div className="flex flex-row justify-between items-center text-sm md:text-base">
                 <div>{datee.forecast.forecastday[3].date}</div>
                 <div>
                   <img
                     src={datee.forecast.forecastday[3].day.condition.icon}
-                    className="h-14 w-14"
+                    className="h-10 w-10 md:h-14 md:w-14"
                   ></img>
                 </div>
               </div>
